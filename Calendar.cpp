@@ -20,10 +20,16 @@ unsigned int print_month(int start_x, int days_of_month){
 int main(){
     int col_width{7};
     int x{};
-    int year{2023};
+    int year{};
+    int first_day_of_the_year{};
+    std::cout << "Enter a year : ";
+    std::cin >> year;
+    std::cout << "Enter the first day of the year [1: Monday, ... 7:Sunday]: ";
+    std::cin >> first_day_of_the_year;
+    
     std::cout << "--January " << year << " -- " << '\n';
     std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
-    x = print_month(7, 31);
+    x = print_month(first_day_of_the_year, 31);
     std::cout << '\n' << '\n';
     std::cout << "--February " << year << " -- " << '\n';
     std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
