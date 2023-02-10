@@ -1,7 +1,13 @@
 #include <iostream>
 #include <iomanip>
 
+void print_header(){
+    int col_width{7};
+    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';    
+}
+
 unsigned int print_month(int start_x, int days_of_month){
+    print_header();
     if (start_x < 8){
         for (int j{1}; j < start_x; ++j){
             std::cout << std::setw(7) << " ";
@@ -14,6 +20,7 @@ unsigned int print_month(int start_x, int days_of_month){
         x++;
         if (x > 7 && i < days_of_month) { x -= 7; std::cout << '\n'; }
     }
+    std::cout << '\n' << '\n';
     return x;
 }
 
@@ -27,52 +34,29 @@ int main(){
     std::cout << "Enter the first day of the year [1: Monday, ... 7:Sunday]: ";
     std::cin >> first_day_of_the_year;
     
-    std::cout << "--January " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- January " << year << " -- " << '\n';
     x = print_month(first_day_of_the_year, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--February " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- February " << year << " -- " << '\n';
     x = print_month(x, 28);
-    std::cout << '\n' << '\n';
-    std::cout << "--March " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- March " << year << " -- " << '\n';
     x = print_month(x, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--April " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- April " << year << " -- " << '\n';
     x = print_month(x, 30);
-    std::cout << '\n' << '\n';
-    std::cout << "--May " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- May " << year << " -- " << '\n';
     x = print_month(x, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--June " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- June " << year << " -- " << '\n';
     x = print_month(x, 30);
-    std::cout << '\n' << '\n';
-    std::cout << "--July " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- July " << year << " -- " << '\n';
     x = print_month(x, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--August " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- August " << year << " -- " << '\n';
     x = print_month(x, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--September " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- September " << year << " -- " << '\n';
     x = print_month(x, 30);
-    std::cout << '\n' << '\n';
-    std::cout << "--October " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- October " << year << " -- " << '\n';
     x = print_month(x, 31);
-    std::cout << '\n' << '\n';
-    std::cout << "--November " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- November " << year << " -- " << '\n';
     x = print_month(x, 30);
-    std::cout << '\n' << '\n';
-    std::cout << "--December " << year << " -- " << '\n';
-    std::cout << std::setw(col_width) << "Mon" << std::setw(col_width) << "Tue" << std::setw(col_width) << "Wed" << std::setw(col_width) << "Thu" << std::setw(col_width) << "Fri" << std::setw(col_width) << "Sat" << std::setw(col_width) << "Sun" << '\n';
+    std::cout << "-- December " << year << " -- " << '\n';
     x = print_month(x, 31);
     return 0;
 }
